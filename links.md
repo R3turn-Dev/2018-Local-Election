@@ -136,3 +136,43 @@ PayL
 선거구(구시군)
 선거구명, 사진, 소속정당명, 성명, 성별, 생년월일
 ```
+
+### URIs
+```markdown
+[ 메인 ]
+POST http://info.nec.go.kr/electioninfo/electionInfo_report.xhtml
+PayL
+    electionId              0020180613
+    requestURI              /WEB-INF/jsp/electioninfo/0020180613/cp/cpri03.jsp
+    topMenuId               CP
+    secondMenuId            CPRI03
+    menuId                  CPRI03
+    statementId             CPRI03_#6
+    electionCode            6
+    cityCode                1100
+    townCode                1101
+    sggTownCode             5110101
+    proportionalRepresentationCode	-1
+    dateCode                0
+    x                       19
+    y                       8
+
+[ 시도 ]
+POST http://info.nec.go.kr/bizcommon/selectbox/selectbox_cityCodeBySgJson.json
+PayL
+    electionId      0020180613
+    electionCode    6
+
+[ 구시군 ]
+POST http://info.nec.go.kr/bizcommon/selectbox/selectbox_cityCodeBySgJson.json
+PayL
+    electionId      0020180613
+    electionCode    6
+
+[ 선거구 ]
+POST http://info.nec.go.kr /bizcommon/selectbox/selectbox_getSggCityCodeJson.json
+PayL
+    electionId      0020180613
+    electionCode    6
+    townCode        1101
+```
